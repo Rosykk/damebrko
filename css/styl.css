@@ -75,6 +75,7 @@ body {
   display: flex;
   flex-flow: column;
   align-items: center;
+  text-align: center;
 }
 
 .steps_row {
@@ -191,6 +192,10 @@ header {
   background: url("../content/banner.png");
   background-position: center center;
   background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 header h2 {
