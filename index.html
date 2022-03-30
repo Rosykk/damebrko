@@ -10,21 +10,84 @@
   <title>Dáme brko.</title>
 
   <script async
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAh112K74wd68nXGnvMwGbUIT8Yj7HpxEE&libraries=places&callback=initMap">
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAh112K74wd68nXGnvMwGbUIT8Yj7HpxEE&libraries=places">
   </script>
 
   <script>
-    document.getElementById('search').focus();
 
-    document.getElementById('search').addEventListener('keyup', function (event) {
-      if (event.keyCode == 13) {
-        codeAddress();
+    // src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
+    let autocomplete;
+    let address1Field;
+    let address2Field;
+    let postalField;
+
+    function initAutocomplete() {
+      address1Field = document.querySelector("#address");
+
+      autocomplete = new google.maps.places.Autocomplete(address1Field, 
+      {
+        componentRestrictions: { country: ["cz", "sk"] },
+        fields: ["address_components", "geometry"],
+        types: ["address"],
+      });
+      address1Field.focus();
+
+      autocomplete.addListener("place_changed", fillInAddress);
+    }
+
+    function fillInAddress() {
+      const place = autocomplete.getPlace();
+      let address1 = "";
+      let postcode = "";
+
+      // Get each component of the address from the place details,
+      // and then fill-in the corresponding field on the form.
+      // place.address_components are google.maps.GeocoderAddressComponent objects
+      // which are documented at http://goo.gle/3l5i5Mr
+      for (const component of place.address_components) {
+        const componentType = component.types[0];
+
+        switch (componentType) {
+          case "street_number": {
+            address1 = `${component.long_name} ${address1}`;
+            break;
+          }
+
+          case "route": {
+            address1 += component.short_name;
+            break;
+          }
+
+          case "postal_code": {
+            postcode = `${component.long_name}${postcode}`;
+            break;
+          }
+
+          case "postal_code_suffix": {
+            postcode = `${postcode}-${component.long_name}`;
+            break;
+          }
+          case "locality":
+            document.querySelector("#address").value = component.long_name;
+            break;
+          case "administrative_area_level_1": {
+            document.querySelector("#address").value = component.short_name;
+            break;
+          }
+          case "country":
+            document.querySelector("#address").value = component.long_name;
+            break;
+        }
       }
-    });
+
+      address1Field.value = address1;
+      postalField.value = postcode;
+      address2Field.focus();
+    }
   </script>
 </head>
 
-<body onload="initialize()">
+<body>
 
   <nav class="navbar">
     <a href="./index.html"><img src="./content/logo.png" alt="logo" class="logo"></a>
@@ -43,7 +106,8 @@
   </header>
 
   <section class="sale">
-    <span>Použijte kupón "<a href="https://www.youtube.com/watch?v=48A1TUqhqJM" target="blank">LUKASKRIL10🔗</a>" pro slevu +10% k ceně</span>
+    <span>Použijte kupón "<a href="https://www.youtube.com/watch?v=48A1TUqhqJM" target="blank">LUKASKRIL10🔗</a>" pro
+      slevu +10% k ceně</span>
   </section>
 
   <section class="steps weedify">
@@ -76,8 +140,9 @@
     <div class="container">
       <h2>Zadejte vaši adresu bydliště.</h2>
       <div class="search_bar">
-        <form action="">
-          <input type="search" name="search" id="search" class="bar weedify" placeholder="Zadejte vaši ulici a číslo popisné">
+        <form action="GET">
+          <input type="search" name="search" id="search" class="bar weedify"
+            placeholder="Zadejte vaši ulici a číslo popisné">
           <input type="submit" value="Doručit" class="button">
         </form>
       </div>
@@ -87,56 +152,63 @@
   <section class="offers weedify">
     <div class="container">
       <h2>Hledáte víc, než je marihuana?</h2>
-      <p>Tak tohle je sekce přesně pro Vás. Všichni víme, jak umí být život krutý. A my nejsme vyjímkou. Náš tým se specializuje pouze na produkty, které obsahují THC a CBD, nicméně pro Vás máme mnoho zaručených, léty prověřených tipů</p>
-        <div class="card_row">
-          <div class="card">
-            <img src="./content/meth.jpg" alt="meth">
-            <div class="card_title">
-              <h2>Pervitin</h2>
-            </div>
-            <div class="card_content"><hr>
-              <p>Pokud se Vám život zdá příliš nudný, zaspáváte a nebo máte sociální problémy, tak věřte tomu,
-                že právě pervitin bude droga pro Vás.</p>
-            </div>
+      <p>Tak tohle je sekce přesně pro Vás. Všichni víme, jak umí být život krutý. A my nejsme vyjímkou. Náš tým se
+        specializuje pouze na produkty, které obsahují THC a CBD, nicméně pro Vás máme mnoho zaručených, léty
+        prověřených tipů</p>
+      <div class="card_row">
+        <div class="card">
+          <img src="./content/meth.jpg" alt="meth">
+          <div class="card_title">
+            <h2>Pervitin</h2>
           </div>
-
-          <div class="card">
-            <img src="./content/meth.jpg" alt="meth">
-            <div class="card_title">
-              <h2>Heroin</h2>
-            </div>
-            <div class="card_content"><hr>
-              <p>Pokud se Vám život zdá naopak až příliš zábavný a nebo se zkrátka chcete dobře vychillovat v posteli,
-                zkuste heroin. Tip: nitrožilní užití je nejlepší.</p>
-            </div>
-          </div>
-
-          <div class="card">
-            <img src="./content/meth.jpg" alt="meth">
-            <div class="card_title">
-              <h2>Ketamin</h2>
-            </div>
-            <div class="card_content"><hr>
-              <p></p>
-            </div>
-          </div>
-
-          <div class="card">
-            <img src="./content/meth.jpg" alt="meth">
-            <div class="card_title">
-              <h2>DPH</h2>
-            </div>
-            <div class="card_content"><hr>
-              <p></p>
-            </div>
+          <div class="card_content">
+            <hr>
+            <p>Pokud se Vám život zdá příliš nudný, zaspáváte a nebo máte sociální problémy, tak věřte tomu,
+              že právě pervitin bude droga pro Vás.</p>
           </div>
         </div>
-        
+
+        <div class="card">
+          <img src="./content/meth.jpg" alt="meth">
+          <div class="card_title">
+            <h2>Heroin</h2>
+          </div>
+          <div class="card_content">
+            <hr>
+            <p>Pokud se Vám život zdá naopak až příliš zábavný a nebo se zkrátka chcete dobře vychillovat v posteli,
+              zkuste heroin. Tip: nitrožilní užití je nejlepší.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="./content/meth.jpg" alt="meth">
+          <div class="card_title">
+            <h2>Ketamin</h2>
+          </div>
+          <div class="card_content">
+            <hr>
+            <p></p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="./content/meth.jpg" alt="meth">
+          <div class="card_title">
+            <h2>DPH</h2>
+          </div>
+          <div class="card_content">
+            <hr>
+            <p></p>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
   <footer>
-    <p>Web vytvořen pouze jako vtip! Milujte nás. S firmout <b>Herbalus s.r.o.</b> tato stránka nemá nic společného, nicméně je rádi "vypromujeme".</p>
+    <p>Web vytvořen pouze jako vtip! Milujte nás. S firmout <b>Herbalus s.r.o.</b> tato stránka nemá nic společného,
+      nicméně je rádi "vypromujeme".</p>
     <p class="weedify">Vytvořil <span class="heart">Rosykk</span> s <span class="heart">❤</span>.</p>
   </footer>
 
