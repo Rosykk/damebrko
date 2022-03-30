@@ -10,25 +10,23 @@
   <title>Dáme brko.</title>
 
   <script async
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAh112K74wd68nXGnvMwGbUIT8Yj7HpxEE&libraries=places">
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAh112K74wd68nXGnvMwGbUIT8Yj7HpxEE&libraries=places&callback=initAutocomplete">
   </script>
 
   <script>
-
-    // src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
     let autocomplete;
     let address1Field;
     let address2Field;
     let postalField;
 
     function initAutocomplete() {
-      address1Field = document.querySelector("#address");
+      address1Field = document.querySelector("#search");
 
       autocomplete = new google.maps.places.Autocomplete(address1Field, 
       {
         componentRestrictions: { country: ["cz", "sk"] },
-        fields: ["address_components", "geometry"],
-        types: ["address"],
+        fields: ["search"],
+        types: ["search"],
       });
       address1Field.focus();
 
@@ -40,10 +38,6 @@
       let address1 = "";
       let postcode = "";
 
-      // Get each component of the address from the place details,
-      // and then fill-in the corresponding field on the form.
-      // place.address_components are google.maps.GeocoderAddressComponent objects
-      // which are documented at http://goo.gle/3l5i5Mr
       for (const component of place.address_components) {
         const componentType = component.types[0];
 
@@ -68,14 +62,14 @@
             break;
           }
           case "locality":
-            document.querySelector("#address").value = component.long_name;
+            document.querySelector("#search").value = component.long_name;
             break;
           case "administrative_area_level_1": {
-            document.querySelector("#address").value = component.short_name;
+            document.querySelector("#search").value = component.short_name;
             break;
           }
           case "country":
-            document.querySelector("#address").value = component.long_name;
+            document.querySelector("#search").value = component.long_name;
             break;
         }
       }
@@ -141,7 +135,7 @@
       <h2>Zadejte vaši adresu bydliště.</h2>
       <div class="search_bar">
         <form action="GET">
-          <input type="search" name="search" id="search" class="bar weedify"
+          <input type="search" id="search" class="search bar weedify"
             placeholder="Zadejte vaši ulici a číslo popisné">
           <input type="submit" value="Doručit" class="button">
         </form>
