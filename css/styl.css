@@ -4,6 +4,7 @@
   --main-color: #38a700;
   --secondary-color: #9bd47e;
   --grey: #e2e2e2;
+  --heart: #ff7f7f;
 }
 
 body {
@@ -35,12 +36,13 @@ body {
 .sale {
   margin: 0;
   width: 100vw;
-  height: 2rem;
+  height: 2.5rem;
   color: white;
   vertical-align: middle;
   display:table-cell;
   background: var(--main-color);
   text-align: center;
+  font-size: 18px;
 }
 
 .steps {
@@ -144,6 +146,10 @@ body {
   vertical-align: middle;
 }
 
+.heart {
+  color: var(--heart);
+}
+
 .weedify {
   color: var(--main-color);
 }
@@ -180,7 +186,7 @@ img{
 }
 
 p {
-  font-size: 18px;
+  font-size: 20px;
   line-height: 1.3;
 }
 
@@ -245,7 +251,7 @@ li a:hover {
 }
 
 footer {
-  border-top: 1px solid var(--grey);
+  border-top: 1px solid var(--main-color);
   margin: 0;
   padding: 2rem;
   font-weight: 600;
