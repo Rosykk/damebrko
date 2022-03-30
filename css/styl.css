@@ -120,14 +120,15 @@ body {
   position: relative;
 }
 
-.sale a:link, a:visited, a:hover, a:active {
-  text-decoration: none;
+.sale a:link,  .sale a:visited, 
+.sale a:hover, .sale a:active {
+  text-decoration: underline;
   color: white;
 }
 
-.sale a:hover, a:active {
-  text-decoration: underline;
-}
+.sale a:hover, .sale a:active {
+  text-decoration: none;
+} 
 
 .card {
   margin: auto;
