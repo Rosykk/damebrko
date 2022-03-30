@@ -8,9 +8,23 @@
   <link rel="stylesheet" href="./css/styl.css">
   <link rel="icon" type="image/png" href="./content/favicon.png">
   <title>Dáme brko.</title>
+
+  <script async
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAh112K74wd68nXGnvMwGbUIT8Yj7HpxEE&libraries=places&callback=initMap">
+  </script>
+
+  <script>
+    document.getElementById('search').focus();
+
+    document.getElementById('search').addEventListener('keyup', function (event) {
+      if (event.keyCode == 13) {
+        codeAddress();
+      }
+    });
+  </script>
 </head>
 
-<body>
+<body onload="initialize()">
 
   <nav class="navbar">
     <a href="./index.html"><img src="./content/logo.png" alt="logo" class="logo"></a>
@@ -31,13 +45,6 @@
   <section class="sale">
     <span>Použijte kupón "<a href="https://www.youtube.com/watch?v=48A1TUqhqJM" target="blank">LUKASKRIL10🔗</a>" pro slevu +10% k ceně</span>
   </section>
-
-  <!-- <section class="address">
-    <form action="">
-      <input type="search" name="search" id="search">
-      <input type="submit" value="Hledej">
-    </form>
-  </section> -->
 
   <section class="steps weedify">
     <div class="container">
@@ -61,6 +68,18 @@
             <p>Začněte se&nbsp;těšit na objednávku.</p>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="address weedify">
+    <div class="container">
+      <h2>Zadejte vaši adresu bydliště.</h2>
+      <div class="search_bar">
+        <form action="">
+          <input type="search" name="search" id="search" class="bar weedify" placeholder="Zadejte vaši ulici a číslo popisné">
+          <input type="submit" value="Doručit" class="button">
+        </form>
       </div>
     </div>
   </section>
@@ -117,8 +136,8 @@
   </section>
 
   <footer>
-    <span>Web vytvořen pouze jako vtip. Milujte nás. S Herbalusem tahle stránka nemá nic společného, nicméně je rádi "vypromujeme".</span><br>
-    <span class="weedify">Vytvořil <span class="heart">Rosykk</span> s <span class="heart">❤</span>.</span>
+    <p>Web vytvořen pouze jako vtip! Milujte nás. S firmout <b>Herbalus s.r.o.</b> tato stránka nemá nic společného, nicméně je rádi "vypromujeme".</p>
+    <p class="weedify">Vytvořil <span class="heart">Rosykk</span> s <span class="heart">❤</span>.</p>
   </footer>
 
 </body>

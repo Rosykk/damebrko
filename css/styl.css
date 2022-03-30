@@ -4,7 +4,11 @@
   --main-color: #38a700;
   --secondary-color: #9bd47e;
   --grey: #e2e2e2;
-  --heart: #ff7f7f;
+  --heart: #286610;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -46,6 +50,13 @@ body {
 }
 
 .steps {
+  line-height: 1.25;
+  margin-top: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.address {
   line-height: 1.25;
   margin-top: 0;
   margin-left: auto;
@@ -120,6 +131,51 @@ body {
   position: relative;
 }
 
+.search_bar {
+  align-items: center;
+  width: 100%;
+  margin-left: 0;
+  padding-bottom: 2rem;
+  position: relative;
+}
+
+.search_bar form {
+  flex-flow: column;
+  align-items: center;
+  text-align: center;
+}
+
+.button {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 20px;
+  background: var(--main-color);
+  padding: 1.3rem 2rem;
+  border-radius: 10px;
+  border: none;
+  color: white;
+}
+
+.button:hover {
+  background: var(--heart);
+  transition: ease-out 150ms;
+}
+
+.bar {
+  font-family: 'Josefin Sans', sans-serif;
+  min-width: 275px;
+  font-size: 16px;
+  background-color: white;
+  padding: 1.25rem;
+  border: 1px solid var(--grey);
+  border-radius: 10px;
+  color: white;
+}
+
+.bar::placeholder {
+  text-align: left;
+  font-size: 14px;
+}
+
 .sale a:link,  .sale a:visited, 
 .sale a:hover, .sale a:active {
   text-decoration: underline;
@@ -189,7 +245,7 @@ hr {
   height: 1px;
 }
 
-img{
+img {
   max-width: 100%;
   max-height: 100%;
   display: block;
@@ -261,10 +317,15 @@ li a:hover {
 }
 
 footer {
-  border-top: 1px solid var(--main-color);
+  border-top: 1px solid var(--grey);
   margin: 0;
   padding: 2rem;
   font-weight: 600;
   text-align: center;
   color: var(--main-color);
+}
+
+footer p {
+  margin: 0;
+  font-size: 16px;
 }
