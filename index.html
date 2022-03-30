@@ -10,24 +10,21 @@
   <title>Dáme brko.</title>
 
   <script async
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAh112K74wd68nXGnvMwGbUIT8Yj7HpxEE&libraries=places&callback=initAutocomplete">
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDJHiGYHO0Txuc9t_yDg05pYoMPMh-8xbwlibraries=places&callback=initAutocomplete">
   </script>
 
   <script>
     let autocomplete;
     let address1Field;
-    let address2Field;
-    let postalField;
-
     function initAutocomplete() {
       address1Field = document.querySelector("#search");
 
       autocomplete = new google.maps.places.Autocomplete(address1Field, 
-      {
-        componentRestrictions: { country: ["cz", "sk"] },
-        fields: ["search"],
-        types: ["search"],
-      });
+        {
+          componentRestrictions: { country: ["cz", "sk"] },
+          types: ["search"],
+        }
+      );
       address1Field.focus();
 
       autocomplete.addListener("place_changed", fillInAddress);
@@ -47,36 +44,21 @@
             break;
           }
 
-          case "route": {
-            address1 += component.short_name;
-            break;
-          }
-
           case "postal_code": {
             postcode = `${component.long_name}${postcode}`;
             break;
           }
 
-          case "postal_code_suffix": {
-            postcode = `${postcode}-${component.long_name}`;
-            break;
-          }
           case "locality":
             document.querySelector("#search").value = component.long_name;
             break;
-          case "administrative_area_level_1": {
-            document.querySelector("#search").value = component.short_name;
-            break;
-          }
+
           case "country":
             document.querySelector("#search").value = component.long_name;
             break;
         }
       }
-
       address1Field.value = address1;
-      postalField.value = postcode;
-      address2Field.focus();
     }
   </script>
 </head>
@@ -134,7 +116,7 @@
     <div class="container">
       <h2>Zadejte vaši adresu bydliště.</h2>
       <div class="search_bar">
-        <form action="GET">
+        <form action="">
           <input type="search" id="search" class="search bar weedify"
             placeholder="Zadejte vaši ulici a číslo popisné">
           <input type="submit" value="Doručit" class="button">
