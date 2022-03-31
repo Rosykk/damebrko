@@ -1,7 +1,7 @@
     function initAutocomplete() {
       const options = {
         componentRestrictions: { country: 'cs' },
-        fields: ['adr_address'],
+        fields: ['address'],
         strictBounds: true
       };
 

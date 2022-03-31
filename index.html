@@ -14,18 +14,12 @@
   <script src="https://kit.fontawesome.com/751b0e2c95.js" crossorigin="anonymous"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script async defer type="text/javascript"
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDJHiGYHO0Txuc9t_yDg05pYoMPMh-8xbw&libraries=places&callback=initAutocomplete"></script>
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDJHiGYHO0Txuc9t_yDg05pYoMPMh-8xbw&libraries=places&callback=initAutocomplete&types=address"></script>
   <script src="./js/autofill.js"></script>
+  <script src="./js/sidebar.js"></script>
 
   <script type="text/javascript">
-    function myFunction() {
-      var x = document.getElementById("respNavbar");
-      if (x.className === "topnav") {
-        x.className += " responsive";
-      } else {
-        x.className = "topnav";
-      }
-    }
+
   </script>
 </head>
 
@@ -85,7 +79,7 @@
         <div class="steps_item">
           <div class="steps_item_inner">
             <img src="./content/step_3.svg" class="weedify_svg">
-            <p>Začněte se&nbsp;těšit na objednávku.</p>
+            <p>Začněte se&nbsp;těšit!.</p>
           </div>
         </div>
       </div>
@@ -97,7 +91,7 @@
       <h2>Zadejte vaši adresu bydliště.</h2>
       <div class="search_content">
         <form action="">
-          <input type="search" id="search" class="weedify" placeholder="Zadejte vaši ulici a číslo popisné">
+          <input type="text" id="search" class="weedify" placeholder="Zadejte vaši ulici a číslo popisné">
           <input type="submit" value="Doručit">
         </form>
       </div>
