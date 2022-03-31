@@ -376,6 +376,49 @@ input[type=text]:focus-visible {
   outline: none;
 }
 
+/* responsive sidebar */
+.sidebar {
+  z-index: 10000;
+  top: 0px;
+  background-color: white;
+  width: 200px;
+  height: 100%;
+  position: fixed;
+  transition: 0.5s;
+  box-shadow: 0px 9px 10px rgba(0,0,0,0.3);
+}
+
+.sidebar.inactive {
+  display: none;
+  width: 0px;
+  transition: 0.5s;
+}
+
+.visible {
+  display: block;
+}
+
+.hidden {
+  display: none;
+}
+
+.sidebar a {
+  display: block;
+  color: var(--main-color);
+  padding: 16px;
+  text-decoration: none;
+}
+
+.sidebar a.active {
+  background-color: var(--main-color);
+  color: white;
+}
+
+.sidebar a:hover:not(.active) {
+  background-color: var(--main-color);
+  color: white;
+}
+
 /* responsive menu */
 .topnav {
   width: 100%;
