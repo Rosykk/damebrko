@@ -1,9 +1,8 @@
-function myFunction() {
-    var x = document.getElementById("sideBar");
-    var l = document.getElementById("sideBarLinks");
+let x = document.getElementById("sideBar");
+let l = document.getElementById("sideBarLinks");
 
+function myFunction() {
     if (x.className === "sidebar.inactive") {
-        x.style.width = 200;
         x.className = "sidebar";
         l.className = "visible";
     } 
