@@ -4,9 +4,15 @@ window.onload = function WindowLoad(event) {
 
 function trigger() {
     let input = document.getElementById('search');
-    let regex = /^\S+$/;
+    let regex = /^\s*$/;
 
-    ( ( regex.test(input.value) == true ) ? enableButton() : disableButton() );
+    if ( regex.test(input.value) == false ) {
+      enableButton();
+    }
+
+    if ( regex.test(input.value) == true ) {
+      disableButton();
+    }
 }
 
 function initAutocomplete() {
