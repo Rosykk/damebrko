@@ -381,6 +381,7 @@ input[type=text]:focus-visible {
   width: 0;
   height: 100%;
   position: fixed;
+  white-space: nowrap;
   box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
   overflow-x: hidden;
   transition: 0.5s ease-out;
@@ -394,9 +395,10 @@ input[type=text]:focus-visible {
 .sidebar a {
   display: block;
   color: var(--main-color);
-  padding: 21px;
+  padding: 1.5rem;
+  white-space: nowrap;
   text-decoration: none;
-  transition: 0.3s ease-in-out;
+  transition: 0.5s ease-in-out;
   -webkit-transition: 0.5s ease-in-out;
 }
 
@@ -416,18 +418,9 @@ input[type=text]:focus-visible {
   padding-left: 2rem;
 }
 
-.sidebar .icon:target {
-  cursor: pointer;
-}
-
 .sidebar .icon:hover:not(i) {
   background: white;
   color: var(--main-color);
-  cursor: auto;
-}
-
-.web_content {
-  transition: margin-left 0.3s;
 }
 
 /* responsive menu */
