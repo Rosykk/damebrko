@@ -33,10 +33,11 @@
     </a>
 
     <div class="links">
+      <a href="https://www.herbalus.cz/cbd/4837730-darkove-poukazy" target="blank" class="link">Dárkové poukazy</a>
+      <a href="https://www.herbalus.cz/cbd/3358967-prislusenstvi" target="blank" class="link">K pokouřeníčku</a>
       <a href="https://www.herbalus.cz/cbd/8471540-cbd-oleje" target="blank" class="link">CBD oleje</a>
       <a href="https://www.herbalus.cz/cbd/5046513-cbd-konopi" target="blank" class="link">CBD květy</a>
-      <a href="https://www.herbalus.cz/cbd/3358967-prislusenstvi" target="blank" class="link">K pokouřeníčku</a>
-      <a href="https://www.herbalus.cz/cbd/4837730-darkove-poukazy" target="blank" class="link">Dárkové poukazy</a>
+
     </div>
 
   </div>
@@ -56,7 +57,7 @@
   </header>
 
   <section class="sale">
-    <span>Použijte kupón "<a href="https://www.youtube.com/watch?v=48A1TUqhqJM" target="blank">LUKASKRIL10🔗</a>" pro
+    <span>Použijte kupón "<a href="./content/lukas.mp3" target="blank">LUKASKRIL10🔗</a>" pro
       slevu +10% k ceně</span>
   </section>
 
@@ -89,11 +90,15 @@
   <section class="address weedify">
     <div class="container">
       <h2>Zadejte vaši adresu bydliště.</h2>
+      <span id="error"></span>
       <div class="search_content">
-        <form action="">
-          <input type="text" id="search" class="weedify" placeholder="Zadejte vaši ulici a číslo popisné">
-          <input type="submit" value="Doručit">
-        </form>
+        <div class="form">
+          <input type="text" id="search" class="weedify" placeholder="Zadejte vaši ulici a číslo popisné" 
+          onchange 
+          onpropertychange 
+          onkeyuponpaste oninput="trigger();"/>
+          <a href="./order.html"><button id="button">Doručit</button></a>
+        </div>
       </div>
     </div>
   </section>
