@@ -1,0 +1,17 @@
+    function initAutocomplete() {
+      const options = {
+        componentRestrictions: { country: "cz" },
+        fields: ["adr_address"],
+        strictBounds: true,
+        types: ["establishment"],
+      };
+
+      const input = document.getElementById("search");
+      const autocomplete = new google.maps.places.Autocomplete(input, options);
+
+      autocomplete.setComponentRestrictions({
+        country: ["cz", "sk"],
+      });
+
+      const searchBox = new google.maps.places.Autocomplete(input);
+    }
