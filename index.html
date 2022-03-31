@@ -31,15 +31,15 @@
       <a href="https://www.herbalus.cz/cbd/5046513-cbd-konopi" target="blank" class="link">CBD květy</a>
     </div>
 
-    <a href="javascript:void(0);" class="icon fa-lg weedify" onclick="myFunction()">
+    <a href="javascript:void(0);" class="icon fa-lg weedify" onclick="openNav()">
       <i class="fa fa-bars"></i>
     </a>
 
   </div>
 
-  <div class="sidebar.inactive" id="sideBar">
-    <div class="hidden" id="sideBarLinks">
-      <a href="javascript:void(0);" class="icon fa-xl weedify" onclick="myFunction()">
+  <div class="sidebar" id="sideBar">
+    <div class="" id="sideBarLinks">
+      <a href="javascript:void(0);" class="icon fa-xl weedify" onclick="closeNav()">
         <i class="fa-solid fa-xmark"></i>
       </a>
       <a href="https://www.herbalus.cz/cbd/8471540-cbd-oleje" target="blank" class="link">CBD oleje</a>
@@ -49,126 +49,129 @@
     </div>
   </div>
 
-  <header>
-    <h1 class="weedify_s">Vaše oblíbené pochutiny až k vám.</h1>
-    <p class="h2">Tak na co máte chuť?</p>
-  </header>
+  <div class="web_content">
+    <header>
+      <h1 class="weedify_s">Vaše oblíbené pochutiny až k vám.</h1>
+      <p class="h2">Tak na co máte chuť?</p>
+    </header>
 
-  <section class="sale">
-    <span>Použijte kupón "<a href="./content/lukas.mp3" target="blank">LUKASKRIL10🔗</a>" pro
-      slevu +10% k ceně</span>
-  </section>
+    <section class="sale">
+      <span>Použijte kupón "<a href="./content/lukas.mp3" target="blank">LUKASKRIL10🔗</a>" pro
+        slevu +10% k ceně</span>
+    </section>
 
-  <section class="steps weedify">
-    <div class="container">
-      <h2>Jednoduchá objednávka ve&nbsp;3&nbsp;krocích</h2>
-      <div class="steps_row">
-        <div class="steps_item">
-          <div class="steps_item_inner">
-            <img src="./content/step_1.svg" class="weedify_svg">
-            <p>Zadejte Vaši adresu</p>
+    <section class="steps weedify">
+      <div class="container">
+        <h2>Jednoduchá objednávka ve&nbsp;3&nbsp;krocích</h2>
+        <div class="steps_row">
+          <div class="steps_item">
+            <div class="steps_item_inner">
+              <img src="./content/step_1.svg" class="weedify_svg">
+              <p>Zadejte Vaši adresu</p>
+            </div>
           </div>
-        </div>
-        <div class="steps_item">
-          <div class="steps_item_inner">
-            <img src="./content/step_2.svg" class="weedify_svg">
-            <p>Vyberte si pochutiny</p>
+          <div class="steps_item">
+            <div class="steps_item_inner">
+              <img src="./content/step_2.svg" class="weedify_svg">
+              <p>Vyberte si pochutiny</p>
+            </div>
           </div>
-        </div>
-        <div class="steps_item">
-          <div class="steps_item_inner">
-            <img src="./content/step_3.svg" class="weedify_svg">
-            <p>Začněte se&nbsp;těšit!.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="address weedify">
-    <div class="container">
-      <h2>Zadejte vaši adresu bydliště.</h2>
-      <span id="error"></span>
-      <div class="search_content">
-        <div class="form">
-          <input type="text" id="search" class="weedify" placeholder="Zadejte vaši ulici a číslo popisné" 
-          onchange 
-          onpropertychange 
-          onkeyuponpaste oninput="trigger();"/>
-          <a href="./order.html"><button id="button">Doručit</button></a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="offers weedify">
-    <div class="container">
-      <h2>Hledáte víc, než je marihuana?</h2>
-      <p>Tak tohle je sekce přesně pro Vás. Všichni víme, jak umí být život krutý. A my nejsme vyjímkou. Náš tým se
-        specializuje pouze na produkty, které obsahují THC a CBD, nicméně pro Vás máme mnoho zaručených, léty
-        prověřených tipů</p>
-      <div class="card_row">
-        <div class="card">
-          <img src="./content/meth.jpg" alt="meth">
-          <div class="card_title">
-            <h2>Pervitin</h2>
-          </div>
-          <div class="card_content">
-            <hr>
-            <p>Pokud se Vám život zdá příliš nudný, zaspáváte a nebo máte sociální problémy, tak věřte tomu,
-              že právě pervitin bude droga pro Vás.</p>
-          </div>
-        </div>
-
-        <div class="card">
-          <img src="./content/heroin.jpg" alt="heroin">
-          <div class="card_title">
-            <h2>Heroin</h2>
-          </div>
-          <div class="card_content">
-            <hr>
-            <p>Pokud se Vám život zdá naopak až příliš zábavný a nebo se zkrátka chcete dobře vychillovat v posteli,
-              zkuste heroin.</p>
-          </div>
-          <div class="card_bottom">
-            <hr>
-            <span>Pro tip: nejlepší ROA je IV.</span>
-          </div>
-        </div>
-
-        <div class="card">
-          <img src="./content/meth.jpg" alt="meth">
-          <div class="card_title">
-            <h2>Ketamin</h2>
-          </div>
-          <div class="card_content">
-            <hr>
-            <p></p>
-          </div>
-        </div>
-
-        <div class="card">
-          <img src="./content/meth.jpg" alt="meth">
-          <div class="card_title">
-            <h2>DPH</h2>
-          </div>
-          <div class="card_content">
-            <hr>
-            <p></p>
+          <div class="steps_item">
+            <div class="steps_item_inner">
+              <img src="./content/step_3.svg" class="weedify_svg">
+              <p>Začněte se&nbsp;těšit!.</p>
+            </div>
           </div>
         </div>
       </div>
+    </section>
 
-    </div>
-  </section>
+    <section class="address weedify">
+      <div class="container">
+        <h2>Zadejte vaši adresu bydliště.</h2>
+        <span id="error"></span>
+        <div class="search_content">
+          <div class="form">
+            <input type="text" id="search" class="weedify" placeholder="Zadejte vaši ulici a číslo popisné" 
+            onchange 
+            onpropertychange 
+            onkeyuponpaste oninput="trigger();"/>
+            <a href="./order.html"><button id="button">Doručit</button></a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <footer>
-    <p>Web vytvořen pouze jako vtip! Milujte nás. S firmou <b class="heart">Herbalus s.r.o.</b> tato stránka nemá nic společného,
-      nicméně je rádi "vypromujeme".</p>
-    <p class="weedify">Vytvořil <b class="heart">Rosykk</b> s <span class="heart">❤</span>.</p>
-  </footer>
-  <script src="./js/sidebar.js"></script>
+    <section class="offers weedify">
+      <div class="container">
+        <h2>Hledáte víc, než je marihuana?</h2>
+        <p>Tak tohle je sekce přesně pro Vás. Všichni víme, jak umí být život krutý. A my nejsme vyjímkou. Náš tým se
+          specializuje pouze na produkty, které obsahují THC a CBD, nicméně pro Vás máme mnoho zaručených, léty
+          prověřených tipů</p>
+        <div class="card_row">
+          <div class="card">
+            <img src="./content/meth.jpg" alt="meth">
+            <div class="card_title">
+              <h2>Pervitin</h2>
+            </div>
+            <div class="card_content">
+              <hr>
+              <p>Pokud se Vám život zdá příliš nudný, zaspáváte a nebo máte sociální problémy, tak věřte tomu,
+                že právě pervitin bude droga pro Vás.</p>
+            </div>
+          </div>
 
+          <div class="card">
+            <img src="./content/heroin.jpg" alt="heroin">
+            <div class="card_title">
+              <h2>Heroin</h2>
+            </div>
+            <div class="card_content">
+              <hr>
+              <p>Pokud se Vám život zdá naopak až příliš zábavný a nebo se zkrátka chcete dobře vychillovat v posteli,
+                zkuste heroin.</p>
+            </div>
+            <div class="card_bottom">
+              <hr>
+              <span>Pro tip: nejlepší ROA je IV.</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <img src="./content/meth.jpg" alt="meth">
+            <div class="card_title">
+              <h2>Ketamin</h2>
+            </div>
+            <div class="card_content">
+              <hr>
+              <p></p>
+            </div>
+          </div>
+
+          <div class="card">
+            <img src="./content/meth.jpg" alt="meth">
+            <div class="card_title">
+              <h2>DPH</h2>
+            </div>
+            <div class="card_content">
+              <hr>
+              <p></p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <footer>
+      <p>Web vytvořen pouze jako vtip! Milujte nás. S firmou <b class="heart">Herbalus s.r.o.</b> tato stránka nemá nic společného,
+        nicméně je rádi "vypromujeme".</p>
+      <p class="weedify">Vytvořil <b class="heart">Rosykk</b> s <span class="heart">❤</span>.</p>
+    </footer>
+    
+    <script src="./js/sidebar.js"></script>
+
+  </div>
 </body>
 
 </html>

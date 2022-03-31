@@ -233,10 +233,6 @@ body {
   padding: 0;
 }
 
-.card_bottom {
-
-}
-
 .heart {
   color: var(--heart);
 }
@@ -379,25 +375,16 @@ input[type=text]:focus-visible {
 /* responsive sidebar */
 .sidebar {
   top: 0;
+  left: 0;
   z-index: 10000;
   background-color: white;
-  width: 200px;
+  width: 0;
   height: 100%;
   position: fixed;
   box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
-}
-
-.sidebar.inactive < .sidebar {
-  display: none;
-  width: 0px;
-}
-
-.sidebar.inactive < .sidebar {
-  box-shadow: none;
-}
-
-.visible {
-  display: block;
+  overflow-x: hidden;
+  transition: 0.5s ease-in-out;
+  -webkit-transition: 0.5s ease-in-out;
 }
 
 .hidden {
@@ -409,6 +396,8 @@ input[type=text]:focus-visible {
   color: var(--main-color);
   padding: 21px;
   text-decoration: none;
+  transition: 0.3s ease-in-out;
+  -webkit-transition: 0.5s ease-in-out;
 }
 
 .sidebar a.active {
@@ -435,6 +424,10 @@ input[type=text]:focus-visible {
   background: white;
   color: var(--main-color);
   cursor: auto;
+}
+
+.web_content {
+  transition: margin-left 0.3s;
 }
 
 /* responsive menu */
