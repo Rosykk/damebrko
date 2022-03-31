@@ -19,7 +19,7 @@
 
   <script type="text/javascript">
     function myFunction() {
-      var x = document.getElementById("myTopnav");
+      var x = document.getElementById("respNavbar");
       if (x.className === "topnav") {
         x.className += " responsive";
       } else {
@@ -31,18 +31,30 @@
 
 <body>
 
-  <div class="topnav" id="myTopnav">
+  <div class="topnav" id="respNavbar">
     <a href="./index.html"><img src="./content/logo.png" alt="logo" class="logo"></a>
-    <div class="right-lnk">
+
+    <a href="javascript:void(0);" class="icon weedify" onclick="myFunction()">
+      <i class="fa fa-bars"></i>
+    </a>
+
+    <div class="links">
       <a href="https://www.herbalus.cz/cbd/8471540-cbd-oleje" target="blank" class="link">CBD oleje</a>
       <a href="https://www.herbalus.cz/cbd/5046513-cbd-konopi" target="blank" class="link">CBD květy</a>
       <a href="https://www.herbalus.cz/cbd/3358967-prislusenstvi" target="blank" class="link">K pokouřeníčku</a>
       <a href="https://www.herbalus.cz/cbd/4837730-darkove-poukazy" target="blank" class="link">Dárkové poukazy</a>
     </div>
-    <a href="javascript:void(0);" class="icon weedify" onclick="myFunction()">
-      <i class="fa fa-bars"></i>
-    </a>
+
   </div>
+
+  <!-- <div class="sidebar" id="sideBar">
+    <div>
+      <a href="https://www.herbalus.cz/cbd/8471540-cbd-oleje" target="blank" class="link">CBD oleje</a>
+      <a href="https://www.herbalus.cz/cbd/5046513-cbd-konopi" target="blank" class="link">CBD květy</a>
+      <a href="https://www.herbalus.cz/cbd/3358967-prislusenstvi" target="blank" class="link">K pokouřeníčku</a>
+      <a href="https://www.herbalus.cz/cbd/4837730-darkove-poukazy" target="blank" class="link">Dárkové poukazy</a>
+    </div>
+  </div> -->
 
   <header>
     <h1 class="weedify_s">Vaše oblíbené pochutiny až k vám.</h1>
