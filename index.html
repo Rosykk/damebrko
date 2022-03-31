@@ -13,6 +13,9 @@
 
   <script src="https://kit.fontawesome.com/751b0e2c95.js" crossorigin="anonymous"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://api.tomtom.com/maps-sdk-for-web/cdn/plugins/SearchBox/3.1.12/SearchBox-web.js"></script>
+  <link rel='stylesheet' type='text/css' href='https://api.tomtom.com/maps-sdk-for-web/cdn/plugins/SearchBox/3.1.12/SearchBox.css'>
+  
   <script async defer type="text/javascript"
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDJHiGYHO0Txuc9t_yDg05pYoMPMh-8xbw&libraries=places&callback=initAutocomplete&types=address"></script>
   <script src="./js/autofill.js"></script>
@@ -25,6 +28,8 @@
     <a href="./index.html"><img src="./content/logo.png" alt="logo" class="logo"></a>
 
     <div class="links">
+      <a href="https://www.instagram.com/czechedsubstance/" target="blank" class="link"><i class="fa-brands fa-lg fa-instagram"></i></a>
+      <a href="https://www.youtube.com/channel/UCPvOgeHuITa5Hk4ZMgXvS-w" target="blank" class="link"><i class="fa-brands fa-lg fa-youtube"></i></a> 
       <a href="https://www.herbalus.cz/cbd/4837730-darkove-poukazy" target="blank" class="link">Dárkové poukazy</a>
       <a href="https://www.herbalus.cz/cbd/3358967-prislusenstvi" target="blank" class="link">K pokouřeníčku</a>
       <a href="https://www.herbalus.cz/cbd/8471540-cbd-oleje" target="blank" class="link">CBD oleje</a>
@@ -39,9 +44,17 @@
 
   <div class="sidebar" id="sideBar">
     <div>
-      <a href="javascript:void(0);" class="icon fa-xl weedify" onclick="closeNav();">
+      <a href="javascript:void(0);" class="close fa-xl weedify" onclick="closeNav();">
         <i class="fa-solid fa-xmark"></i>
       </a>
+      <div class="links">
+        <a href="https://www.instagram.com/czechedsubstance/" target="blank" class="icon fa-xl weedify">
+          <i class="fa-brands fa-instagram"></i>
+        </a><br>
+        <a href="https://www.youtube.com/channel/UCPvOgeHuITa5Hk4ZMgXvS-w" target="blank" class="icon fa-xl weedify">
+          <i class="fa-brands fa-youtube"></i>
+        </a>
+      </div>
       <a href="https://www.herbalus.cz/cbd/8471540-cbd-oleje" target="blank" class="link">CBD oleje</a>
       <a href="https://www.herbalus.cz/cbd/5046513-cbd-konopi" target="blank" class="link">CBD květy</a>
       <a href="https://www.herbalus.cz/cbd/3358967-prislusenstvi" target="blank" class="link">K pokouřeníčku</a>
@@ -72,7 +85,7 @@
           </div>
           <div class="steps_item">
             <div class="steps_item_inner">
-              <img src="./content/step_2.svg" class="weedify_svg">
+              <img src="./content/step_02.svg" class="weedify_svg">
               <p>Vyberte si pochutiny</p>
             </div>
           </div>
@@ -89,15 +102,8 @@
     <section class="address weedify">
       <div class="container">
         <h2>Zadejte vaši adresu bydliště.</h2>
-        <span id="error"></span>
-        <div class="search_content">
-          <div class="form">
-            <input type="text" id="search" class="weedify" placeholder="Zadejte vaši ulici a číslo popisné" 
-            onchange 
-            onpropertychange 
-            onkeyuponpaste oninput="trigger();"/>
-            <a href="./order.html"><button id="button">Doručit</button></a>
-          </div>
+        <div class="search_content" id="search_content">
+          <a href="./order.html"><button id="button">Doručit</button></a>
         </div>
       </div>
     </section>
@@ -110,21 +116,28 @@
           prověřených tipů</p>
         <div class="card_row">
           <div class="card">
-            <img src="./content/meth.jpg" alt="meth">
             <div class="card_title">
-              <h2>Pervitin</h2>
+              <a href="https://www.instagram.com/p/CNXD2UxA_J1/">
+                <img src="./content/meth.jpg" alt="meth">
+                <h2>Pervitin 🔗</h2>
+              </a>
             </div>
             <div class="card_content">
               <hr>
               <p>Pokud se Vám život zdá příliš nudný, zaspáváte a nebo máte sociální problémy, tak věřte tomu,
                 že právě pervitin bude droga pro Vás.</p>
             </div>
+            <div class="card_bottom">
+              <hr>
+            </div>
           </div>
 
           <div class="card">
-            <img src="./content/heroin.jpg" alt="heroin">
             <div class="card_title">
-              <h2>Heroin</h2>
+              <a href="https://www.instagram.com/p/CSFWsTvAG66/">
+                <img src="./content/heroin.jpg" alt="heroin">
+                <h2>Heroin 🔗</h2>
+              </a>
             </div>
             <div class="card_content">
               <hr>
@@ -133,29 +146,38 @@
             </div>
             <div class="card_bottom">
               <hr>
-              <span>Pro tip: nejlepší ROA je IV.</span>
             </div>
           </div>
 
           <div class="card">
-            <img src="./content/meth.jpg" alt="meth">
             <div class="card_title">
-              <h2>Ketamin</h2>
+              <a href="https://www.instagram.com/p/COHpi-cgAEP/">
+                <img src="./content/ketamine.jpg" alt="ketamin">
+                <h2>Ketamin 🔗</h2>
+              </a>
             </div>
             <div class="card_content">
               <hr>
-              <p></p>
+              <p>Nebaví Vás klasické drogy a rádi byste zkusili něco z jiného soudku? Pak se nabízí ketamin, kterým se uspávají koně.</p>
+            </div>
+            <div class="card_bottom">
+              <hr>
             </div>
           </div>
 
           <div class="card">
-            <img src="./content/meth.jpg" alt="meth">
             <div class="card_title">
-              <h2>DPH</h2>
+              <a href="https://www.instagram.com/p/CT7L3h7s0Bq/?utm_source=ig_web_copy_link">
+                <img src="./content/dph.jpg" alt="diphenhydramine">
+                <h2>DPH 🔗</h2>
+              </a>
             </div>
             <div class="card_content">
               <hr>
-              <p></p>
+              <p>Na závěr tu máme DPH. Slyšeli jste o Durmanu a jeho účincích na mysl? Věřte tomu, že nebudete litovat ani jedné pilulky.</p>
+            </div>
+            <div class="card_bottom">
+              <hr>
             </div>
           </div>
         </div>
@@ -170,6 +192,8 @@
     </footer>
     
     <script src="./js/sidebar.js"></script>
+    <script src="./js/services-web.min.js"></script>
+    <script src="./js/autofill2.js"></script>
 
   </div>
 </body>
