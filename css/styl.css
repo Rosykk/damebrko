@@ -157,12 +157,14 @@ body {
   width: 100%;
   margin-bottom: 4rem;
   margin: 0 auto;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 
+  auto;
 }
 
 .search_content  {
   justify-content: center;
-  align-items: center;
+  align-items: stretch;
   gap: 1rem;
   vertical-align: text-top !important;
   text-align: center;
@@ -261,6 +263,10 @@ body {
   margin-top: 0 !important;
 }
 
+.tt-search-box-input-container {
+  height: 100%;
+}
+
 section {
   display: block;
 }
@@ -355,7 +361,7 @@ button {
   font-family: sans-serif;
   position: relative;
   display: grid;
-  place-items: center;
+  place-items: item-center;
   font-size: 19px;
   background: var(--main-color);
   min-width: 126px;
