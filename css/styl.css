@@ -552,7 +552,7 @@ input[type=text]:focus-visible {
 
 .modal-container {
   height: auto 90%;
-  width: 90%;
+  width: 60%;
   background: white;
 }
 
@@ -563,7 +563,7 @@ input[type=text]:focus-visible {
 
 .modal-content p {
   line-height: 1.20;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .modal-content h3 {
@@ -578,6 +578,14 @@ input[type=text]:focus-visible {
   font-size: 22px;
   padding: 0;
   color: var(--main-color);
+}
+
+.modal-content button {
+  white-space: nowrap;
+  margin-top: 1rem;
+  font-size: 22px;
+  min-width: 220px;
+  width: 25vw;
 }
 
 @media screen and (max-width: 1000px) {
