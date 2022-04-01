@@ -154,12 +154,11 @@ body {
 
 .search_content {
   position: relative;
-  width: 100%;
+  width: 50%;
   margin-bottom: 4rem;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 
-  auto;
+  grid-template-columns: 1fr auto;
 }
 
 .search_content  {
@@ -168,30 +167,6 @@ body {
   gap: 1rem;
   vertical-align: text-top !important;
   text-align: center;
-}
-
-.pac-container {
-  background-color: white;
-  font-family: sans-serif;
-  position: absolute !important;
-  min-width: 275px;
-  z-index: 1000;
-  border-color: var(--main-color);
-  border-style: solid;
-  justify-content: space-evenly;
-  border-width: 0px 2px 2px 2px;
-}
-
-.pac-icon-marker {
-  display: none;
-  justify-content: space-evenly;
-}
-
-.pac-logo:after {
-  justify-content: space-evenly;
-  text-align: center; 
-  display: none; 
-  background: white; 
 }
 
 .sale a:link,  .sale a:visited, 
@@ -256,15 +231,48 @@ body {
 
 .tt-search-box {
   position: relative;
-  border-radius: 5px;
+  min-width: 300px;
+  border-radius: 5px !important;
   height: 100%;
-  flex: 0 0 30%;
+  flex: 0 0 10%;
   margin: 0;
   margin-top: 0 !important;
 }
 
 .tt-search-box-input-container {
+  padding: 9px 10px;
+  display: flex;
+  align-items: center;
+}
+
+.tt-search-box-input {
+  position: relative;
+  vertical-align: text-bottom;
+  box-shadow: none;
+  padding-left: 8px;
+  background-position: 0;
+  background-color: transparent;
+  width: calc(100% - 50px);
+  font-size: 14px;
+  min-width: 0;
+}
+
+.tt-search-box-input-container svg {
+  position: relative;
+  display: grid;
+  vertical-align: middle;
+  grid-template-columns: 1fr auto;
+}
+
+.tt-search-box-input-container.-focused {
+  box-shadow: none !important;  
+}
+
+.tt-search-box-input-container {
+  border: 3px solid var(--main-color) !important; 
+  border-radius: 5px !important;
   height: 100%;
+  vertical-align: middle;
 }
 
 section {
@@ -358,16 +366,17 @@ footer p {
 }
 
 button {
-  font-family: sans-serif;
+  font-family: 'Josefin Sans', sans-serif;
   position: relative;
-  display: grid;
   place-items: item-center;
   font-size: 19px;
   background: var(--main-color);
   min-width: 126px;
   min-height: 58px;
   border-radius: 5px;
-  padding-bottom: 3px;
+  padding-bottom: 0;
+  padding: 0;
+  margin: 0;
   border: none;
   color: white;
 }
@@ -505,7 +514,6 @@ input[type=text]:focus-visible {
 }
 
 .topnav .link:hover {
-  
   color: white;
   position: relative;
   text-decoration: none;
@@ -519,20 +527,35 @@ input[type=text]:focus-visible {
 @media screen and (max-width: 875px) {
   header h1.weedify_s { color: white; }
   .topnav a.link { display: none; }
-  .topnav a img.logo { display: none; }
+  .topnav a img.logo {
+    position: relative;
+    display: block;
+    margin-left: 3.5rem;
+  }
   .topnav a.icon {
     position: absolute;
     display: block;
-    margin-inline: 2rem;
+    margin-left: 2rem;
   }
   button {
     margin: 1rem 0 1rem 0;
-    width: 275px;
+    width: 70%;
   }
   .sale {
     font-size: 16px;
   }
   .card {
     margin-bottom: 2rem;
+  }
+  .search_content {
+    margin: 0;
+    text-align: center;
+    position: relative;
+    display: block;
+    width: 100%;
+  }
+  .tt-search-box {
+    min-width: 0px;
+    width: 100%;
   }
 }
