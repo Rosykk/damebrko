@@ -508,14 +508,13 @@ input[type=text]:focus-visible {
   place-items: center;
   padding-inline: 20px;
   text-decoration: none;
+  position: relative;
   font-size: 18px;
-  font-weight: 600;
   height: 100%;
 }
 
 .topnav .link:hover {
   color: white;
-  position: relative;
   text-decoration: none;
   background: var(--main-color);
 }
@@ -524,18 +523,17 @@ input[type=text]:focus-visible {
   display: none;
 }
 
-@media screen and (max-width: 875px) {
+@media screen and (max-width: 1000px) {
   header h1.weedify_s { color: white; }
   .topnav a.link { display: none; }
   .topnav a img.logo {
     position: relative;
     display: block;
-    margin-left: 3.5rem;
   }
   .topnav a.icon {
-    position: absolute;
+    position: relative;
     display: block;
-    margin-left: 2rem;
+    margin-right: 2rem;
   }
   button {
     margin: 1rem 0 1rem 0;
