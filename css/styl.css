@@ -3,6 +3,7 @@
 :root {
   --main-color: rgb(56, 167, 0);
   --hover-color: #2c8500;
+  --modal-color: #66ac43;
   --secondary-color: #9bd47e;
   --grey: #e2e2e2;
   --dark-grey: #747474;
@@ -242,6 +243,7 @@ body {
 .tt-search-box-input-container {
   padding: 9px 10px;
   display: flex;
+  min-height: 58px;
   align-items: center;
 }
 
@@ -367,17 +369,16 @@ footer p {
 
 button {
   font-family: 'Josefin Sans', sans-serif;
-  position: relative;
-  place-items: item-center;
-  font-size: 19px;
   background: var(--main-color);
+  place-items: item-center;
+  position: relative;
+  border-radius: 5px;
   min-width: 126px;
   min-height: 58px;
-  border-radius: 5px;
-  padding-bottom: 0;
-  padding: 0;
+  padding-top: 5px;
+  font-size: 19px;
   margin: 0;
-  border: none;
+  border: 3px solid var(--hover-color);
   color: white;
 }
 
@@ -387,6 +388,7 @@ button:hover {
 }
 
 button:disabled {
+  border: 3px solid var(--dark-grey);
   background: var(--dark-grey);
 }
 
@@ -415,6 +417,22 @@ input[type=text]:focus-visible {
   text-indent: 1rem;
   padding-left: 0;
   outline: none;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: white;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--dark-grey);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary-color);
 }
 
 /* responsive sidebar */
@@ -468,18 +486,10 @@ input[type=text]:focus-visible {
   color: var(--main-color);
 }
 
-.sidebar .icon {
-  display: flex;
-  position: relative;
-  align-items: center;
-  vertical-align: middle;
-  justify-content: center;
-  width: 100%;
-}
-
 /* responsive menu */
 .topnav {
   top: 0;
+  z-index: 10;
   width: 100%;
   height: 7ch;
   background-color: white;
@@ -523,28 +533,84 @@ input[type=text]:focus-visible {
   display: none;
 }
 
+/* modal */
+.modal {
+  display: none;
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  z-index: 99999; 
+  width: 100%;
+  height: 100%; 
+  background-color: rgba(0,0,0,0.9); 
+}
+
+.modal-container {
+  height: auto 90%;
+  width: 90%;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.modal-content {
+  background: white;
+  padding: 1.5rem;
+  height: 100%;
+}
+
+.modal-content p {
+  line-height: 1.25;
+  background: white;
+}
+
+.modal-content h2 {
+  margin: 0;
+  padding: 0.5rem;
+  color: var(--main-color);
+}
+
 @media screen and (max-width: 1000px) {
   header h1.weedify_s { color: white; }
+
   .topnav a.link { display: none; }
+
   .topnav a img.logo {
     position: relative;
     display: block;
   }
+
   .topnav a.icon {
     position: relative;
     display: block;
     margin-right: 2rem;
   }
+
+  .topnav a.icon:hover {
+    color: var(--hover-color);
+    transition: 200ms;
+  }
+
   button {
     margin: 1rem 0 1rem 0;
-    width: 70%;
+    width: 100%;
   }
+
   .sale {
     font-size: 16px;
   }
+
   .card {
     margin-bottom: 2rem;
   }
+
+  .modal-content {
+    display: block;
+  }
+
   .search_content {
     margin: 0;
     text-align: center;
@@ -552,6 +618,7 @@ input[type=text]:focus-visible {
     display: block;
     width: 100%;
   }
+
   .tt-search-box {
     min-width: 0px;
     width: 100%;
