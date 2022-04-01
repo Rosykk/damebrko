@@ -553,23 +553,30 @@ input[type=text]:focus-visible {
 .modal-container {
   height: auto 90%;
   width: 90%;
-
   background: white;
 }
 
 .modal-content {
-  height: 80vh;
   padding: 1.5rem;
   height: 100%;
 }
 
 .modal-content p {
-  line-height: 1.25;
+  line-height: 1.20;
+  font-size: 14px;
 }
 
-.modal-content h2 {
+.modal-content h3 {
   margin: 0;
-  padding: 0.5rem;
+  font-size: 22px;
+  padding-top: 1.4rem;
+  color: var(--main-color);
+}
+
+.modal-content h3:first-child {
+  margin: 0;
+  font-size: 22px;
+  padding: 0;
   color: var(--main-color);
 }
 
@@ -585,15 +592,22 @@ input[type=text]:focus-visible {
 
   .modal-container {
     display: block;
-    height: 100%;
-    position: relative;
-    overflow: auto;
-    overflow: initial !important
+    height: auto;
   }
-
   .modal-content {
-    overflow: auto;
-    overflow: initial !important
+    padding-bottom: 0;
+    padding-top: 1rem;
+    height: 100%;
+    text-align: justify;
+  }
+  .modal-content h3 {
+    font-size: clamp(17px, 2.5vw, 20px);
+  }
+  .modal-content p {
+    font-size: clamp(14px, 1.5vw, 18px);
+  }
+  .modal-content button {
+    margin: 1rem 0;
   }
 
   .topnav a.icon {

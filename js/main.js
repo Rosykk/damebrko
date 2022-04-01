@@ -7,26 +7,36 @@ let b = document.getElementById('bars');
 
 let m = document.getElementById("myModal");
 
-function saveSession() {
-    let rand = Math.floor(Math.random() * 9999999) + 1000000;
-
-    localStorage.setItem('pid', rand);
-}
-
+// Gets user session
 function getSession() {
     let bool = localStorage.getItem('pid');
     return bool;
 }
 
-// Modal policy
+// If user does not have a session, saves one for him.
+function saveSession() {
+    let rand = Math.random().toString(15);
+
+    localStorage.setItem('pid', rand);
+}
+
+// If confirmed, hide modal and save session to localStorage.
+function hideModal() {
+    enableScroll();
+    document.body.style.overflow = "visible";
+    m.style.display = 'none';
+
+    if ( !getSession() ) {
+        saveSession();
+    }
+}
+
+// Open modal if user is there for the first time
 function openModal() {
-    if (!getSession()) {
+    if ( !getSession() ) {
         disableScroll();
         document.body.style.overflow = "hidden";
         m.style.display = 'block';
-    } else {
-        document.body.style.overflow = "visible";
-        m.style.display = 'none';
     }
 }
 
@@ -84,13 +94,13 @@ var wheelEvent = 'onwheel' in document.createElement('div') ? 'wheel' : 'mousewh
 function disableScroll() {
     window.addEventListener('DOMMouseScroll', preventDefault, false); // older FF
     window.addEventListener(wheelEvent, preventDefault, wheelOpt); // modern desktop
-    // window.addEventListener('touchmove', preventDefault, wheelOpt); // mobile
+    window.addEventListener('touchmove', preventDefault, wheelOpt); // mobile
     window.addEventListener('keydown', preventDefaultForScrollKeys, false);
 }
 
 function enableScroll() {
     window.removeEventListener('DOMMouseScroll', preventDefault, false);
     window.removeEventListener(wheelEvent, preventDefault, wheelOpt);
-    // window.removeEventListener('touchmove', preventDefault, wheelOpt);
+    window.removeEventListener('touchmove', preventDefault, wheelOpt);
     window.removeEventListener('keydown', preventDefaultForScrollKeys, false);
 }
