@@ -1,12 +1,10 @@
 <!DOCTYPE html>
-<html lang="cz">
+<html lang="cs">
 
 <head>
-  <title>Rozvoz a dovoz brk po celé ČR - Dáme brko</title>
-
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="cache-control" content="public">
 
   <link rel="stylesheet" href="./css/styl.css">
   <link rel="icon" type="image/png" href="./content/favicon.png">
@@ -15,12 +13,14 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://api.tomtom.com/maps-sdk-for-web/cdn/plugins/SearchBox/3.1.12/SearchBox-web.js"></script>
   <link rel='stylesheet' type='text/css' href='https://api.tomtom.com/maps-sdk-for-web/cdn/plugins/SearchBox/3.1.12/SearchBox.css'>
+
+  <title>Rozvoz a dovoz brk po celé ČR - Dáme brko</title>
 </head>
 
 <body>
 
   <div class="modal" id="myModal">
-    <div class="modal-container weedify">
+    <div class="modal-container middle weedify">
       <div class="modal-content">
         <h2>Věnujte, prosím, pozornost těmto pár řádkům!</h2>
 
@@ -40,8 +40,8 @@
           Ne, autor webu nedostal zaplaceno za propagaci Herbalus s.r.o., ani s nimi nemá nic společného. A někteří, ti zainteresování zde naleznou odkazy na drug harm reduction.
         </p>
 
-        <h2>Zde závazně potvrď vstup na stránku.</h2>
-        <button id="button" onclick="">Vstoupit na stránku</button>
+        <h2>Zde závazně potvrďte vstup na stránku.</h2>
+        <button id="accept" onclick="">Vstoupit na stránku</button>
       </div>
     </div>
   </div>
@@ -58,7 +58,7 @@
       <a href="https://www.herbalus.cz/cbd/4837730-darkove-poukazy" target="blank" class="link">Dárkové poukazy</a>
     </div>
 
-    <a href="javascript:void(0);" class="icon fa-lg weedify reopen" onclick="opCloseNav();" id="bars">
+    <a href="javascript:void(0);" class="icon fa-lg weedify reopen" onclick="opCloseNav();" aria-label="bars" id="bars">
       <i class="fa fa-bars"></i>
     </a>
 
