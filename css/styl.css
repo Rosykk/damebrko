@@ -472,11 +472,6 @@ input[type=text]:focus-visible {
   -webkit-transition: 0.5s ease-in-out;
 }
 
-.sidebar a.active {
-  background-color: var(--main-color);
-  color: white;
-}
-
 .sidebar a:hover:not(.active) {
   background-color: var(--main-color);
   color: white;
@@ -510,12 +505,19 @@ input[type=text]:focus-visible {
   padding: 0 1.5rem;
 }
 
-.links {
-  display: flex;
+.links  {
   position: relative;
+  display: flex;
   align-items: center;
   vertical-align: middle;
   height: 100%;
+}
+
+.links .icon {
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+  width: 100%;
 }
 
 .topnav .link {
@@ -590,9 +592,7 @@ input[type=text]:focus-visible {
 
 @media screen and (max-width: 1000px) {
   header h1.weedify_s { color: white; }
-
   .topnav a.link { display: none; }
-
   .topnav a img.logo {
     position: relative;
     display: block;
@@ -637,15 +637,9 @@ input[type=text]:focus-visible {
   .sale {
     font-size: 16px;
   }
-
   .card {
     margin-bottom: 2rem;
   }
-
-  .modal-content {
-    display: block;
-  }
-
   .search_content {
     margin: 0;
     text-align: center;
@@ -653,7 +647,6 @@ input[type=text]:focus-visible {
     display: block;
     width: 100%;
   }
-
   .tt-search-box {
     min-width: 0px;
     width: 100%;
