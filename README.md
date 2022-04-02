@@ -4,7 +4,7 @@
 
 To jsem se jednou zase tak nudil, že udělám ripoff **damejidlo.cz** a vznikl z toho téměř kompletní web.
 
-- **Verze: 1.42**
+- **Verze: 1.43**
 - **Stav: stable**
 - **Doména: [damebrko.xyz](https://damebrko.xyz/).**
 

@@ -66,5 +66,7 @@ node_modules/
 .env
 
 #executables
-.exe
 firebase-tools-instant-win.exe
+
+#javascript firebase
+fbase.js
