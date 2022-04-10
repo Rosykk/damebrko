@@ -84,7 +84,7 @@ body {
 .container p {
   width: 100%;
   position: relative;
-  text-align: justify center;
+  text-align: center;
 }
 
 .steps_item+.steps_item {
@@ -112,29 +112,18 @@ body {
 .steps_row p {
   flex-flow: wrap;
   text-align: center;
-  font-size: clamp(15px, 1.5vw, 20px);
+  font-size: 20px;
   justify-content: space-evenly;
 }
 
-.steps_row:before {
-  content: "";
-  position: absolute;
-  top: 55px;
-  left: 10%;
-  right: 10%;
-  height: 2px;
-  background-color: var(--grey);
-  z-index: 5;
-}
-
 .steps_item {
-  flex: 2;
-  max-width: 22.5%;
+  flex: 3;
+  max-width: 20%;
   background-color: #fff;
   z-index: 10;
 }
 
-.steps_item img{
+.steps_item img, .shield img {
   -webkit-user-drag: none;
   -khtml-user-drag: none;
   -moz-user-drag: none;
@@ -212,6 +201,7 @@ body {
 .card_title h2 {
   text-align: center;
   padding: 0;
+  margin: 1rem;
 }
 
 .heart {
@@ -220,10 +210,6 @@ body {
 
 .weedify {
   color: var(--main-color);
-}
-
-.weedify_s {
-  color: var(--secondary-color);
 }
 
 .weedify_svg {
@@ -236,6 +222,21 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.shield {
+  flex-flow: row wrap;
+  align-items: flex-start;
+  justify-content: space-around;
+  width: 100%;
+  padding-bottom: 2rem;
+  display: flex;
+  position: relative;
+}
+
+.shield_size {
+  min-width: 3rem;
+  width: 5rem;
 }
 
 .tt-search-box {
@@ -354,10 +355,9 @@ header > * {
 h2 {
   font-size: 25px;
   text-align: center;
-  margin-bottom: 0;
   position: relative;
-  padding-bottom: 4rem;
-  padding-top: 3rem;
+  margin-bottom: 3rem;
+  margin-top: 5rem;
   z-index: 0;
 }
 
@@ -603,18 +603,26 @@ input[type=text]:focus-visible {
     height: auto;
     width: 90%;
   }
+
   .modal-content {
     padding-bottom: 0;
     padding-top: 1rem;
     height: 100%;
     text-align: justify;
   }
+
   .modal-content h3 {
     font-size: clamp(17px, 2.5vw, 20px);
   }
+
   .modal-content p {
     font-size: clamp(14px, 1.5vw, 18px);
   }
+
+  .address h2 {
+    margin-top: 0;
+  }
+
   .modal-content button {
     margin: 1rem 0;
   }
@@ -638,9 +646,27 @@ input[type=text]:focus-visible {
   .sale {
     font-size: 16px;
   }
+
   .card {
     margin-bottom: 2rem;
   }
+
+  .steps_row {
+    flex-flow: row;
+    justify-content: space-around;
+    width: 100%;
+    position: relative;
+    display: grid;
+    vertical-align: middle;
+    margin-bottom: 0;
+  }
+
+  .steps_item {
+    max-width: 100%;
+    z-index: 10;
+    margin-bottom: 3rem;
+  }
+
   .search_content {
     margin: 0;
     text-align: center;
@@ -648,6 +674,7 @@ input[type=text]:focus-visible {
     display: block;
     width: 100%;
   }
+
   .tt-search-box {
     min-width: 0px;
     width: 100%;

@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function () { openModal(); });
 let x = document.getElementById('sideBar');
 let n = document.getElementById('respNavbar');
 let b = document.getElementById('bars');
+let c = document.getElementById('close');
 
 let m = document.getElementById("myModal");
 
@@ -56,6 +57,7 @@ function openNav() {
     x.style.width = '250px';
     b.style.transitionDuration = '0.5s';
     b.style.transform = 'rotate(90deg)';
+    b.style.zIndex = '9999990';
 }
 
 function closeNav() {
